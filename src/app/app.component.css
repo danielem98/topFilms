@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #222;
+    padding: 0.6rem 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-title {
+    color: #FFF;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+button{
+    background: transparent;
+    border:none;
+}
+
+svg {
+    width: 44px;
+    height: 44px;
+}

@@ -1,0 +1,23 @@
+<div class="position-relative">
+  <h4>{{title}}</h4>
+
+  <div class="position-relative buttons-scroll-container">
+    <button class="btn btn-dark position-absolute start-0 btn-scroll" 
+      (click)="scroll(-0.9)">
+    ❮
+    </button>
+
+    <button class="btn btn-dark position-absolute end-0 btn-scroll" 
+      (click)="scroll(0.9)">
+    ❯
+    </button>
+
+    <div #scrollContainer class="scroll-container d-flex flex-nowrap overflow-x-auto gap-3 p-0 position-relative p-1">
+      <ng-container  *ngIf="movies$ | async as response">
+        <div *ngFor="let movie of response.results" class="flex-shrink-0">
+          <movie-card [movie]="movie"></movie-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

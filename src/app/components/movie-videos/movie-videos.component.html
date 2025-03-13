@@ -1,0 +1,17 @@
+<div class="movie-videos" *ngIf="mainVideo">
+    <h2>Official trailer</h2>
+    <div class="video-wrapper">
+      <iframe 
+        [src]="getSafeUrl(mainVideo.key)" 
+        frameborder="0" 
+        allowfullscreen
+        title="Trailer ufficiale del film {{ movie.title }}">
+      </iframe>
+    </div>
+  </div>
+  
+  <div *ngIf="!mainVideo" class="no-video">
+    <p>Nessun trailer ufficiale disponibile</p>
+  </div>
+
+  

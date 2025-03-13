@@ -1,0 +1,175 @@
+.movie-backdrop {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #8c0199;
+}
+
+  
+.backdrop-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+  
+.movie-content {
+  padding: 20px;
+}
+  
+.movie-summary {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+  
+.movie-poster {
+  width: 300px;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.movie-poster:hover {
+  transform: scale(1.03);
+}
+  
+.movie-meta {
+  flex: 1;
+}
+  
+.movie-meta ul {
+  list-style: none;
+  padding: 0;
+}
+  
+.movie-meta li {
+  margin-bottom: 8px;
+}
+  
+.movie-details-extra {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center !important;
+}
+  
+.genres{
+  margin-bottom: 20px;
+}
+.movie-details-extra {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+  
+.company {
+  flex: 0 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+  
+.company img {
+  max-width: 80px;
+  height: auto;
+  margin: 0 auto;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+  
+.company:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+} 
+
+.genres span {
+  background: linear-gradient(135deg, #8c0199 0%, #9b00aa 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  margin: 2px;
+  display: inline-block;
+}
+
+  
+
+@media (max-width: 768px) {
+  .movie-details-extra {
+    gap: 1rem;
+  }
+  
+  .company img {
+    max-width: 60px;
+  }
+  .movie-summary {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .movie-poster {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .movie-backdrop {
+    height: 200px;
+  }
+
+  .movie-details-extra {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .company {
+    flex: 0 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .company img {
+    max-width: 80px;
+    height: auto;
+    margin: 0 auto;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+  }
+
+  .company:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+  }
+}
+   
+@media (max-width: 480px) {
+  .movie-meta h2 {
+    font-size: 1.5rem;
+  }
+  
+  .backdrop-overlay h1 {
+    font-size: 1.8rem;
+  }
+}

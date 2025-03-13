@@ -1,0 +1,63 @@
+<div class="movie-details-page" *ngIf="movie">
+    <!-- Sezione Hero con Backdrop -->
+    <div 
+      class="movie-backdrop" 
+      [ngStyle]="{'background-image': 'url(' + ('https://image.tmdb.org/t/p/w780' + movie.backdrop_path) + ')'}">
+      <div class="backdrop-overlay">
+        <h1>{{ movie.title }}</h1>
+        <p class="tagline" *ngIf="movie.tagline">{{ movie.tagline }}</p>
+        <p class="release-date">{{ movie.release_date | date:'longDate' }}</p>
+      </div>
+    </div>
+  
+    <!-- Contenuto Principale -->
+    <div class="movie-content container">
+      <div class="movie-summary">
+        <!-- Poster del film -->
+        <img 
+          [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : 'assets/default-image.png'" 
+          alt="{{ movie.title }}" 
+          class="movie-poster"
+          loading="lazy">
+        <!-- Dettagli principali -->
+        <div class="movie-meta">
+          <h2>{{ movie.original_title }}</h2>
+
+          <div class="genres" *ngIf="movie.genres && movie.genres.length"> 
+            <p>
+              <span *ngFor="let genre of movie.genres">
+                {{genre.name}}
+              </span>
+            </p>
+          </div>
+
+          <p>{{ movie.overview }}</p>
+          <ul>
+            <li><strong>Runtime:</strong> {{ movie.runtime }} min</li>
+            <li><strong>Budget:</strong> {{ movie.budget | currency }}</li>
+            <li><strong>Revenue:</strong> {{ movie.revenue | currency }}</li>
+            <li>
+              <strong>Vote:</strong> {{ movie.vote_average }}/10 
+              ({{ movie.vote_count }} voti)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <app-movie-videos [movie]="movie"></app-movie-videos>
+      </div>
+  
+      <!-- Sezione Informazioni Aggiuntive -->
+      <div class="movie-details-extra">
+        <div class="company" *ngFor="let company of movie.production_companies">
+            <img 
+            *ngIf="company.logo_path" 
+            [src]="'https://image.tmdb.org/t/p/w200' + company.logo_path" 
+            alt="{{'Logo' + company.name }}"
+            loading="lazy"
+            >
+        </div>
+      </div>
+    </div>
+  </div>

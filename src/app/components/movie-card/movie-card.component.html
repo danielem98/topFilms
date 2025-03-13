@@ -1,0 +1,24 @@
+<div class="card-wrapper">
+
+  <div class="card-left">
+    <img [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path" 
+         class="card-img-top"
+         alt="{{ movie.title }}">
+    <div class="p-2">
+      <h6 class="card-title mb-1 title">{{movie.title}}</h6>
+      <div class="d-flex align-items-center">
+        <i class="bi bi-star-fill text-warning me-1"></i>
+        <small class="card-text">{{movie.vote_average | number:'1.1-1'}}/10</small>
+      </div>
+    </div >
+  </div>
+      
+  <div class="card-right d-flex flex-column justify-content-around">
+    <div class="card-right-header">
+      <h6 class="card-title right-title px-2">{{movie.title}}</h6>
+    </div>
+    <p class="px-2 m-0 overview">{{movie.overview}}</p>
+    <button class="btn btn-light btn-sm"
+      (click)="movieDetails()">Show more</button>
+  </div>
+</div>
